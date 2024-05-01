@@ -18,10 +18,26 @@ public class NoteService {
         try {
             return noteDao.save(newNote);
         } catch (Exception e) {
-            System.err.println("Error while saving earthquake data: " + e.getMessage());
+            System.err.println("Error while saving note data: " + e.getMessage());
             throw new ServerException();
         }
     }
 
-    //delete all ve delete by id fonk. eklenecek
+    public void DeleteAll(){
+        try {
+            noteDao.deleteAll();
+        } catch (Exception e) {
+            System.err.println("Error while deleting all list: " + e.getMessage());
+            throw new ServerException();
+        }
+    }
+
+    public void DeleteById(NoteModel note){
+        try {
+            noteDao.deleteById(note.getId());
+        } catch (Exception e) {
+            System.err.println("Error while deleting all list: " + e.getMessage());
+            throw new ServerException();
+        }
+    }
 }
