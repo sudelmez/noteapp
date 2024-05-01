@@ -23,7 +23,7 @@ public class NoteService {
         }
     }
 
-    public void DeleteAll(){
+    public void deleteAll(){
         try {
             noteDao.deleteAll();
         } catch (Exception e) {
@@ -32,9 +32,9 @@ public class NoteService {
         }
     }
 
-    public void DeleteById(NoteModel note){
+    public void deleteById(long id){
         try {
-            noteDao.deleteById(note.getId());
+            noteDao.deleteById(id);
         } catch (Exception e) {
             System.err.println("Error while deleting all list: " + e.getMessage());
             throw new ServerException();
