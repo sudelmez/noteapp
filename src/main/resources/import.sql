@@ -1,0 +1,1 @@
+-- INSERT INTO TBL_NOTE (id,note) VALUES (34, 89, 5.6);

@@ -2,17 +2,18 @@ package com.codehub.noteapp.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-// import javax.persistence.GeneratedValue;
-// import javax.persistence.GenerationType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
 
-@Entity //veritabanı olduğunu söyler
+@Entity //veritabanı belli edecek
 @Table(name = "note")
 public class NoteModel {
     @Id
-    // @GeneratedValue(strategy = GenerationType.IDENTITY) otomatik id oluşturmak için. ama gerek yok
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
+    // otomatik id oluşturmak için
     private Long id;
     @Column(name = "dateTime")
     private LocalDateTime dateTime;
